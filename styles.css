@@ -32,6 +32,7 @@
     width: 25px;
     margin-right: 8px;
 }
+
 .container button{
     display: flex;
     align-items: center;
@@ -77,4 +78,9 @@
     bottom: 15px;
     right: 15px;
     cursor: pointer;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
 }
