@@ -1,9 +1,9 @@
-const notesContainer = document.querySelector(".notes-container");
-const createBtn = document.querySelector(".btn");
-let notes = document.querySelectorAll(".input-box");
+let notesContainer =`document.querySelector`("notes-container");
+const createBtn = `document.querySelector`(".btn");
+let notes = `document.queryselectorAll`(".input-box");
 
 function showNotes(){
-    notesContainer.innerHTML = localStorage.getItem("notes");
+    notesContainer.innerHTML =localStorage.getItem("notes");
 }
 showNotes();
 
@@ -17,7 +17,7 @@ createBtn.addEventListener("click", ()=>{
     inputBox.className = "input-box";
     inputBox.setAttribute("contenteditable", "true");
     img.src = "images/delete.png";
-    notesContainer.appendChild(inputBox).appendChild(img)
+    notesContainer.appendChild(inputBox).appendChild(img);
 })
 
 notesContainer.addEventListener("click", function(e){
@@ -25,19 +25,19 @@ notesContainer.addEventListener("click", function(e){
         e.target.parentElement.remove();
         updateStorage();
     }
-    else if(e.target.tagName === "P"){
-        notes = document.querySelectonAll(".input-box");
+    else if (e.target.tagName === "p"){
+        notes = document.querySelectorAll(".input-box");
         notes.forEach(nt => {
-            nt.onkeyup = function*(){
+            nt.onkeyup = function(){
                 updateStorage();
             }
         })
     }
 })
 
-document.addEventListener("kaydown", event => {
+document.addEventListener("keydown", event =>{
     if(event.key === "Enter"){
-        document.execCommand("insertLinebreak");
+        document.execCommand("insertLineBreak");
         event.preventDefault();
     }
 })
